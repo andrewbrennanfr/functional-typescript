@@ -1,7 +1,7 @@
 /** Mutates the given array by applying the given mutations. */
 export const mutateArray = <T>(
     array: T[],
-    [mutation, ...mutations]: [number, T][],
+    [mutation, ...mutations]: ([number, T, "set" | "unset"] | [number, T])[],
 ): T[] => {
     if (!mutation) return array;
 
